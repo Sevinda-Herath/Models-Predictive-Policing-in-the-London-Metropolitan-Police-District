@@ -1,0 +1,13 @@
+Model,MAE,RMSE,R2,MAPE
+"LSTM - deep (256->128->64 units, L2)",5.2811,18.3327,0.7504,48.59
+LSTM - focal loss (192->96 units),5.3109,19.71,0.7114,51.25
+LSTM - CNN-LSTM (Conv + 128->64),5.3153,18.4025,0.7485,51.6
+"LSTM - attention (256->128->64 units, Huber)",5.434,18.5104,0.7455,47.87
+ENSEMBLE - median,5.4443,18.7978,0.7375,54.41
+LSTM - simple (64 units),5.4472,20.7802,0.6793,53.75
+ENSEMBLE - weighted inverse-MAE,5.4902,19.3638,0.7215,56.27
+ENSEMBLE - all models average,5.5452,19.5201,0.717,57.37
+LSTM - residual skip-connections,5.8448,17.234,0.7794,55.64
+LSTM - stacked (128->64 units),6.1599,21.2714,0.6639,71.86
+LSTM - bidirectional (96 units),6.3844,19.1972,0.7263,66.17
+LSTM - multi-scale ensemble (6/12/24 months),7.5783,25.8299,0.5044,82.91

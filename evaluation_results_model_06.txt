@@ -1,0 +1,44 @@
+# =============================================================================
+# CRIME HOTSPOT EVALUATION METRICS
+# PAI — Prediction Accuracy Index
+# RRI — Recapture Rate Index
+# PEI — Prediction Efficiency Index
+# =============================================================================
+
+Definitions
+RRI = Crimes captured in hotspots / Total actual crimes
+PAI = RRI / Hotspot area ratio
+PEI = RRI / Hotspot area ratio (simplified approximation)
+
+# =============================================================================
+# LSTM RESULTS SUMMARY
+# =============================================================================
+                                       Model    MAE    RMSE     R2  MAPE
+        LSTM - deep (256->128->64 units, L2) 5.2811 18.3327 0.7504 48.59
+           LSTM - focal loss (192->96 units) 5.3109 19.7100 0.7114 51.25
+            LSTM - CNN-LSTM (Conv + 128->64) 5.3153 18.4025 0.7485 51.60
+LSTM - attention (256->128->64 units, Huber) 5.4340 18.5104 0.7455 47.87
+                           ENSEMBLE - median 5.4443 18.7978 0.7375 54.41
+                    LSTM - simple (64 units) 5.4472 20.7802 0.6793 53.75
+             ENSEMBLE - weighted inverse-MAE 5.4902 19.3638 0.7215 56.27
+               ENSEMBLE - all models average 5.5452 19.5201 0.7170 57.37
+            LSTM - residual skip-connections 5.8448 17.2340 0.7794 55.64
+              LSTM - stacked (128->64 units) 6.1599 21.2714 0.6639 71.86
+             LSTM - bidirectional (96 units) 6.3844 19.1972 0.7263 66.17
+LSTM - multi-scale ensemble (6/12/24 months) 7.5783 25.8299 0.5044 82.91
+
+# =============================================================================
+# HOTSPOT EVALUATION SUMMARY
+# =============================================================================
+                               Model  Hotspot_%  Crimes_Captured  Total_Crimes    RRI    PAI    PEI
+LSTM - deep (256->128->64 units, L2)          5           301420       1135743 0.2654 5.3068 5.3068
+LSTM - deep (256->128->64 units, L2)         10           420408       1135743 0.3702 3.7015 3.7015
+LSTM - deep (256->128->64 units, L2)         20           584715       1135743 0.5148 2.5741 2.5741
+
+# =============================================================================
+# BEST MODEL EXPORT SUMMARY
+# =============================================================================
+Best overall model          : LSTM - deep (256->128->64 units, L2)
+Exported Keras model        : LSTM - deep (256->128->64 units, L2)
+Keras file                  : best_lstm_model.keras
+Metadata artifact           : artifacts/best_model_model_06.joblib
