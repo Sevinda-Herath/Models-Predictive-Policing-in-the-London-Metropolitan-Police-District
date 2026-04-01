@@ -19,3 +19,8 @@ XGBoost — strong regularisation,4.5881,9.5826,0.9295,42.98
 XGBoost — slow LR=0.01 (iter=2343),4.5466,9.3946,0.9323,42.47
 XGBoost — wide trees depth=7 LR=0.02 (iter=808),4.5379,9.2687,0.9341,41.87
 SARIMA — auto order AIC (per LSOA),8.0395,16.2988,0.7972,54.52
+LSTM — simple (64 units),5.4162,21.3719,0.6607,51.06999969482422
+LSTM — stacked (128→64 units),6.3483,20.7253,0.681,77.2300033569336
+LSTM — bidirectional (96 units),6.0393,20.9843,0.6729,66.43000030517578
+"LSTM — deep (256→128→64 units, L2 reg)",5.1272,17.7599,0.7657,44.16999816894531
+"LSTM — attention (256→128→64 units, Huber loss)",5.3924,18.1005,0.7566,51.04999923706055
