@@ -1,0 +1,36 @@
+# =============================================================================
+# CRIME HOTSPOT EVALUATION METRICS
+# PAI — Prediction Accuracy Index
+# RRI — Recapture Rate Index
+# PEI — Prediction Efficiency Index
+# =============================================================================
+
+Definitions
+RRI = Crimes captured in hotspots / Total actual crimes
+PAI = RRI / Hotspot area ratio
+PEI = RRI / Hotspot area ratio (simplified approximation)
+
+# =============================================================================
+# REGRESSION EVALUATION SUMMARY
+# =============================================================================
+            Model    MAE   RMSE     R2  MAPE
+Ridge (alpha=0.1) 4.8172 8.9934 0.9379 44.44
+Lasso (alpha=1.0) 4.6464 8.7064 0.9418 47.44
+
+# =============================================================================
+# HOTSPOT EVALUATION SUMMARY
+# =============================================================================
+     Model  Hotspot_%  Crimes_Captured  Total_Crimes    RRI    PAI    PEI
+Best Lasso          5           308946       1138656 0.2713 5.4253 5.4253
+Best Lasso         10           429572       1138656 0.3773 3.7724 3.7724
+Best Lasso         20           595926       1138656 0.5234 2.6166 2.6166
+Best Ridge          5           308825       1138656 0.2712 5.4232 5.4232
+Best Ridge         10           429272       1138656 0.3770 3.7697 3.7697
+Best Ridge         20           595018       1138656 0.5226 2.6126 2.6126
+
+
+# =============================================================================
+# ALL MODEL EXPORT SUMMARY
+# =============================================================================
+Lasso artifact  : artifacts/lasso_model.joblib
+Ridge artifact  : artifacts/ridge_model.joblib
