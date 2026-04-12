@@ -9,3 +9,4 @@ XGBoost - strong regularization,4.5881,9.5826,0.9295,42.98
 XGBoost - slow LR=0.01 (iter=2343),4.5466,9.3946,0.9323,42.47
 XGBoost - wide trees depth=7 LR=0.02 (iter=808),4.5379,9.2687,0.9341,41.87
 SARIMA - auto order AIC (per LSOA),8.7349,1.7544,-2.3499,2.0797
+SARIMA - auto order AIC (per LSOA),7.1792,17.6037,0.7742,51.41
