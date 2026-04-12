@@ -1,0 +1,50 @@
+# =============================================================================
+# CRIME HOTSPOT EVALUATION METRICS
+# PAI — Prediction Accuracy Index
+# RRI — Recapture Rate Index
+# PEI — Prediction Efficiency Index
+# =============================================================================
+
+Definitions
+RRI = Crimes captured in hotspots / Total actual crimes
+PAI = RRI / Hotspot area ratio
+PEI = RRI / Hotspot area ratio (simplified approximation)
+
+# =============================================================================
+# SARIMA EVALUATION SUMMARY
+# =============================================================================
+                             Model          MAE         RMSE             R2         MAPE
+SARIMA - auto order AIC (per LSOA) 8.734912e+74 1.754413e+77 -2.349993e+151 2.079741e+75
+LSOAs fitted    : 3376
+Total LSOAs     : 12415
+Skipped LSOAs   : 7738
+Failed LSOAs    : 1301
+Runtime minutes : 52.0
+
+# =============================================================================
+# HOTSPOT EVALUATION SUMMARY
+# =============================================================================
+                             Model  Hotspot_%  Crimes_Captured  Total_Crimes    RRI    PAI    PEI
+SARIMA - auto order AIC (per LSOA)          5           182662        772229 0.2365 4.7285 4.7285
+SARIMA - auto order AIC (per LSOA)         10           257805        772229 0.3338 3.3377 3.3377
+SARIMA - auto order AIC (per LSOA)         20           362724        772229 0.4697 2.3483 2.3483
+
+# =============================================================================
+# TOP ORDERS SELECTED
+# =============================================================================
+(0, 1, 1) x (0, 0, 0, 12) : 889
+(1, 0, 0) x (0, 0, 0, 12) : 586
+(0, 0, 1) x (0, 0, 0, 12) : 254
+(0, 0, 0) x (0, 0, 1, 12) : 188
+(2, 0, 0) x (0, 0, 0, 12) : 122
+
+# =============================================================================
+# BEST MODEL EXPORT SUMMARY
+# =============================================================================
+Model selected : SARIMA - auto order AIC (per LSOA)
+Metric used    : MAE
+MAE            : 8.734911872347253e+74
+RMSE           : 1.7544130836372977e+77
+R2             : -2.3499926242169083e+151
+MAPE           : 2.0797409219482173e+75
+Artifact path  : artifacts/sarima_model.joblib

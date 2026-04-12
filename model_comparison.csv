@@ -1,7 +1,6 @@
 Model,MAE,RMSE,R2,MAPE
 Ridge (alpha=0.1),4.8172,8.9934,0.9379,44.44
 Lasso (alpha=1.0),4.6464,8.7064,0.9418,47.44
-
 XGBoost - baseline,4.5809,9.3732,0.9326,43.9
 XGBoost - early stopping (iter=371),4.6011,9.7131,0.9276,43.1
 XGBoost - shallow trees (depth=4),4.668,10.2395,0.9195,44.59
@@ -9,3 +8,4 @@ XGBoost - deep trees (depth=8),4.5636,9.4262,0.9318,41.84
 XGBoost - strong regularization,4.5881,9.5826,0.9295,42.98
 XGBoost - slow LR=0.01 (iter=2343),4.5466,9.3946,0.9323,42.47
 XGBoost - wide trees depth=7 LR=0.02 (iter=808),4.5379,9.2687,0.9341,41.87
+SARIMA - auto order AIC (per LSOA),8.7349,1.7544,-2.3499,2.0797
