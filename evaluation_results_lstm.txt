@@ -1,0 +1,44 @@
+# =============================================================================
+# CRIME HOTSPOT EVALUATION METRICS
+# PAI — Prediction Accuracy Index
+# RRI — Recapture Rate Index
+# PEI — Prediction Efficiency Index
+# =============================================================================
+
+Definitions
+RRI = Crimes captured in hotspots / Total actual crimes
+PAI = RRI / Hotspot area ratio
+PEI = RRI / Hotspot area ratio (simplified approximation)
+
+# =============================================================================
+# LSTM RESULTS SUMMARY
+# =============================================================================
+                                       Model    MAE    RMSE     R2  MAPE
+LSTM - attention (256->128->64 units, Huber) 5.2658 18.6914 0.7405 47.63
+        LSTM - deep (256->128->64 units, L2) 5.2839 18.5052 0.7456 49.24
+           LSTM - focal loss (192->96 units) 5.2903 18.7789 0.7381 51.68
+                           ENSEMBLE - median 5.3388 19.3069 0.7231 52.35
+            LSTM - residual skip-connections 5.3897 17.2199 0.7797 50.88
+             ENSEMBLE - weighted inverse-MAE 5.3938 19.4818 0.7181 54.11
+                    LSTM - simple (64 units) 5.4024 20.7864 0.6791 50.29
+               ENSEMBLE - all models average 5.4425 19.6791 0.7123 55.10
+            LSTM - CNN-LSTM (Conv + 128->64) 5.4878 19.4772 0.7182 52.39
+              LSTM - stacked (128->64 units) 5.7529 20.2662 0.6949 63.36
+             LSTM - bidirectional (96 units) 6.1631 20.8934 0.6758 58.82
+LSTM - multi-scale ensemble (6/12/24 months) 7.7057 26.2669 0.4875 83.87
+
+# =============================================================================
+# HOTSPOT EVALUATION SUMMARY
+# =============================================================================
+                                       Model  Hotspot_%  Crimes_Captured  Total_Crimes    RRI    PAI    PEI
+LSTM - attention (256->128->64 units, Huber)          5           301517       1135743 0.2655 5.3085 5.3085
+LSTM - attention (256->128->64 units, Huber)         10           420696       1135743 0.3704 3.7040 3.7040
+LSTM - attention (256->128->64 units, Huber)         20           585047       1135743 0.5151 2.5755 2.5755
+
+# =============================================================================
+# BEST MODEL EXPORT SUMMARY
+# =============================================================================
+Best overall model          : LSTM - attention (256->128->64 units, Huber)
+Exported Keras model        : LSTM - attention (256->128->64 units, Huber)
+Keras file                  : lstm_model.keras
+Metadata artifact           : artifacts/lstm_model.joblib
